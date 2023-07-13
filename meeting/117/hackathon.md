@@ -2,7 +2,7 @@
 title: IETF 117 Hackathon
 description: 
 published: true
-date: 2023-05-20T14:43:21.921Z
+date: 2023-07-11T14:25:35.688Z
 tags: meeting information, hackathon
 editor: markdown
 dateCreated: 2023-04-05T18:18:15.719Z
@@ -13,7 +13,7 @@ The Internet Engineering Task Force (IETF) is holding a hackathon to encourage d
 
 * :spiral_calendar: **When**: Saturday - Sunday, 22-23 July 2023
 * :bridge_at_night: **Where**: Hilton Union Square, San Francisco, CA, USA
-* :cityscape: **Room**: TBD
+* :cityscape: **Room**: [Plaza A-B, Lobby Level](https://datatracker.ietf.org/meeting/117/floor-plan?room=plaza-a-b)
 {.grid-list}
  
 **Sponsored by**
@@ -67,13 +67,13 @@ Related activities before and after the Hackathon weekend
 
 ## Hackdemo Happy Hour
   * Share your Hackathon project with the IETF community
-  * Monday, 24 July, Time: 18:30 - 19:30, Room: TBD
+  * Monday, 24 July, Time: 18:30 - 19:30, Room: [Golden Gate 2-3, Lobby Level](https://datatracker.ietf.org/meeting/117/floor-plan?room=golden-gate-2-3)
   * View the [schedule](hackdemo) or reserve space for your team/project
     * Reservations for space must be made by 13:00, Monday 24 July
 
 ## Code Lounge
   * Space for groups to gather and collaborate on running code 
-  * Monday - Friday, 24-28 July Room: TBD
+  * Tuesday - Friday, 25-28 July, Room: [Golden Gate 2, Lobby Level](https://datatracker.ietf.org/meeting/117/floor-plan?room=golden-gate-2)
   * View the [schedule](codelounge) or reserve space for your team/project
 
 **NOTE:** You will need an [IETF Datatracker](https://datatracker.ietf.org) account to login to the Hackathon Meetecho sessions. 
@@ -143,6 +143,9 @@ If you received the email but the link to create an account has expired, please 
 The NOC team has an ongoing experiment that allows you to join the IETF network remotely as well as at an IETF meeting venue. 
 
 * [How to Instructions](hacknet_instructions)
+
+Requests for networking capabilities beyond wireless access to the IETF network (e.g., wired ports, L2 access, prefix delegation) can be sent to <support@ietf.org>. 
+All requests are addressed on a best effort basis. Advance notice is appreciated and improves the odds of your request being fulfilled.
 {.links-list}
   
 ## <a id="Webexsessionsforteams"></a>Webex sessions for teams
@@ -169,41 +172,281 @@ All Hackathon participants are free to work on any code. The rules regarding tha
 * Note, all projects are open to everyone. However, some champions have identified their projects as being particularly good for those who are new to the IETF or new to the Hackathon. These projects are marked with a star, i.e. *. *If you are championing a project that is great for newcomers, please add a * at the end of your project name.*
 
 
-### Network Telemetry with YANG Push, BMP and IPFIX
+### Network Telemetry - IPFIX SRv6 data-plane visibility
 - **Champion(s)**
   - Thomas Graf (thomas.graf at swisscom.com)
-  - Ahmed Elhassany (ahmed.elhassany at swisscom.com)
-  - Benoit Claise (benoit.claise at huawei.com)
-  - Fengchong (frank) (frank.fengchong at huawei.com)
-  - Alex Huang-Feng (alex.huang-feng at insa-lyon.fr)
   - Maxence Younsi (maxence.younsi at insa-lyon.fr)
 - **Draft(s)**
   - https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-ipfix-srv6-srh
+- **Project info**
+  - Extend IPFIX SRv6 data-plane dissection in Wireshark.
+
+### Network Telemetry - BMP Path Marking Implementation
+- **Champion(s)**
+  - Thomas Graf (thomas.graf at swisscom.com)
+  - Maxence Younsi (maxence.younsi at insa-lyon.fr)
+- **Draft(s)**
   - https://datatracker.ietf.org/doc/html/draft-cppy-grow-bmp-path-marking-tlv
+- **Project info**
+  - Extend BMP implementation in Frrouting with Path Marking.
+
+### Network Telemetry - YANG Push Integration into Apache Kafka
+- **Champion(s)**
+  - Ahmed Elhassany (ahmed.elhassany at swisscom.com)
+  - Benoit Claise (benoit.claise at huawei.com)
+  - Zhuoyao Lin (zephyre888 at gmail.com)
+  - Fengchong (frank) (frank.fengchong at huawei.com)
+  - Alex Huang-Feng (alex.huang-feng at insa-lyon.fr)
+- **Draft(s)**
   - https://datatracker.ietf.org/doc/html/draft-ahuang-netconf-notif-yang
   - https://datatracker.ietf.org/doc/html/draft-tgraf-netconf-yang-notifications-versioning
   - https://datatracker.ietf.org/doc/html/draft-tgraf-netconf-notif-sequencing
   - https://datatracker.ietf.org/doc/html/draft-tgraf-yang-push-observation-time
 - **Project info**
-  - Develop and validate running code. Extend IPFIX SRv6 data-plane dissection in Wireshark. Extend BMP implementation in Frrouting with Path Marking. Marry YANG Push wit Apache Kafka message broker.
+  - Marry YANG Push wit Apache Kafka message broker.
 - **Project site**
   - https://github.com/network-analytics/draft-daisy-kafka-yang-integration/blob/main/draft-daisy-kafka-yang-integration-03.md
   
+### QUIC in Space
+- **Champion(s)**
+  - Marc Blanchet (marc.blanchet at viagenie.ca)
+  - Christian Huitema (huitema at huitema.net)
+- **Project Info**
+  - (Deep) Space comm has loooong delays (minutes to hours) and disruptions. Purpose of the project
+  is to modify open-source QUIC stacks to be usable for this use case. QUIC stacks typically
+  have low initial values to prime the initial communications, which does not fit with long delays
+  and make various assumptions not optinal for space comm. Goal of this project is to: 
+  a) externalize these static values so they could be changed at start or while running, 
+  b) set a testbed to test with long delays and verify use
+  c) modify stacks to support the space use case (specially for disruptions), d) if relevant, 
+  write internet-draft for findings and possible modifications/extensions to QUIC.
+  An initial POC was done with Christian Huitema (see below) with his picoquic stack. 
+  We would like to go further with more QUIC stacks such as Mozilla Neqo (in Rust) or 
+  Google Quiche(in C++) or Cloudflare Quiche (in Rust) or picoquic(in C) or QUINN (in Rust).
+- **Additional Info**
+  - POC: https://www.privateoctopus.com/2023/02/07/quic-to-mars.html
+  - Mozilla Neqo: https://github.com/mozilla/neqo
+  - Cloudflare Quiche: https://github.com/cloudflare/quiche
+  - Google Quiche: https://github.com/google/quiche
+  - Huitema Picoquic: https://github.com/private-octopus/picoquic
+  - Quinn: https://github.com/quinn-rs/quinn
+  - Linux Netem (to introduce delay): https://man7.org/linux/man-pages/man8/tc-netem.8.html
+  - MacOSX Network Link Conditioner (to introduce delay): https://medium.com/@itsanurag/simulate-low-network-with-network-link-conditioner-a1a7f14423b6
+  
+### Attestation and TLS
+- **Champion(s)**
+  - Thomas Fossati (thomas.fossati at arm.com)
+  - Paul Howard (paul.howard at arm.com)
+  - Yogesh Deshpande (yogesh.deshpande at arm.com)
+  - Ionut Mihalcea (ionut.mihalcea at arm.com)
+- **Project Info**
+  - TLS extensions to support attestation as first-class authentication credentials
+  - End-to-end demonstrator with attester, verifier and relying party
+- **Specifications**:
+  - https://datatracker.ietf.org/doc/draft-fossati-tls-attestation
+  - https://datatracker.ietf.org/doc/html/draft-bft-rats-kat
+  - https://datatracker.ietf.org/doc/html/draft-ftbs-rats-msg-wrap
+- **Code**
+  - https://github.com/CCC-Attestation/attested-tls-poc
+  
+### EDHOC
+- **Champion(s)**
+  - Marco Tiloca (marco.tiloca at ri.se)
+  - Rikard Höglund (rikard.hoglund at ri.se)
+- **Project Info**
+  - Establish keying material for OSCORE using the EDHOC protocol
+- **Specifications**:
+  - https://datatracker.ietf.org/doc/draft-ietf-lake-edhoc/
+  - https://datatracker.ietf.org/doc/draft-ietf-core-oscore-edhoc/
+  - https://datatracker.ietf.org/doc/rfc8613/
+  
+### CoAP Group Communication with Group OSCORE
+- **Champion(s)**
+  - Rikard Höglund (rikard.hoglund at ri.se)
+  - Marco Tiloca (marco.tiloca at ri.se)
+- **Project Info**
+  - Message exchange of group messages protected with Group OSCORE
+- **Specifications**
+  - https://datatracker.ietf.org/doc/draft-ietf-core-oscore-groupcomm
+  - https://datatracker.ietf.org/doc/draft-ietf-core-groupcomm-bis  
+  
+### Interfaces of the OSCORE Group Manager
+- **Champion(s)**
+  - Marco Tiloca (marco.tiloca at ri.se)
+- **Project Info**
+  - User and admin interface of the OSCORE Group Manager based on the ACE framework
+- **Specifications**:
+  - https://datatracker.ietf.org/doc/draft-ietf-ace-oscore-gm-admin/
+  - https://datatracker.ietf.org/doc/draft-ietf-ace-key-groupcomm-oscore/
+  - https://datatracker.ietf.org/doc/rfc9200/
+  - https://datatracker.ietf.org/doc/rfc9203/
+
+
+### PQ in X.509, Signatures, KEMS and protocols
+- **Champion(s)**
+John Gray (john.gray@entrust.com)
+Mike Ounsworth (mike.ounsworth@entrust.com)
+Tomofumi Okubo (tomofumi.okubo@digicert.com)
+Massimiliano Pala (m.pala@cablelabs.com)
+Julien Prat (julien.prat@cryptonext-security.com)
+
+- **Draft Specifications**
+https://datatracker.ietf.org/doc/draft-ietf-lamps-dilithium-certificates/
+https://datatracker.ietf.org/doc/draft-ietf-lamps-kyber-certificates/
+https://datatracker.ietf.org/doc/draft-ounsworth-pq-composite-keys/
+https://datatracker.ietf.org/doc/draft-ounsworth-pq-composite-sigs/
+https://datatracker.ietf.org/doc/draft-ounsworth-pq-composite-kem/
+https://www.ietf.org/id/draft-housley-lamps-cms-kemri-00.html
+https://datatracker.ietf.org/doc/draft-becker-guthrie-cert-binding-for-multi-auth/
+TODO: TOMO to add Cert discovery draft
+https://datatracker.ietf.org/doc/draft-bonnell-lamps-chameleon-certs/
+https://datatracker.ietf.org/doc/draft-gazdag-x509-hash-sigs/
+
+- **Project Info**
+Purpose is to make use of PQ in real world X.509 structures like keys, signatures, certificates and protocols. This will allow us to test interoperability between different algorithm implementations, gain experience using these new algorithms, and provide feedback to the standards groups about practical usage in the real world.
+A good starting place is our Github repository: https://github.com/IETF-Hackathon/pqc-certificates
+
+For information on OIDs used to create interoperable structures, consult: https://github.com/IETF-Hackathon/pqc-certificates/blob/master/docs/oid_mapping.md
+  
+  
+### Web Application Firewall Protocol (WAF-P) 
+- **Champion(s)**
+  - Avi Wolicki (avi at benchlabs.xyz)
+- **Project Info**
+  - The initiative of the Web Application Firewall Protocol (WAF-P) aims to create a standard between Web Application Firewalls in order to allow easy interface access, export and import and simplified managment. For example, a WAF profider may want to allow the a threat intelligence provider to be able to add new rules to the firewall on an occuring basis. If an organization may have more than one firewall, the vendor will be able to push a new rule to multiple instances using a single protocol. This protocol aims to be HTTP based as communication is across the web.
+
+### IP-Based Mobile Object Networking (IPMON) over 5G V2X
+- **Champion(s)**
+	- Jaehoon (Paul) Jeong (pauljeong at skku.edu)
+- **Participant(s)**
+  - Mugabarigira Bien Aime
+	- Hyeonah Jung (hyeonah_jung at naver.com)
+  - Junhee Kwon (lovekwon200 at gmail.com)
+- **Project Info**
+	- 5G-Based IPv6 ND for multihop V2V &amp; V2I communication.
+  - AI-Based IPv6 Stateless Address Autoconfiguration (SLAAC) in multihop V2V &amp; V2I scenarios.
+  - IPv6 Mobility Management performanceenhancement with AI methods for IP-Based vehicle networks IPv6 Routing
+- **Specifications**
+  - https://datatracker.ietf.org/doc/draft-jeong-6man-ipmon-problem-statement/
+  - https://datatracker.ietf.org/doc/draft-jeong-6man-ipv6-over-5g-v2x/ 
+  - https://datatracker.ietf.org/doc/draft-jeong-ipwave-vehicular-mobility-management/
+  - https://datatracker.ietf.org/doc/draft-jeong-ipwave-vehicular-neighbor-discovery/
+
+### FRRouting doctors & 🔝🥔
+- **Champion(s)**
+  - David '*equinox*' Lamparter (equinox at opensourcerouting.org)
+  - Rodney Grimes (TBD)
+  - Alistair Woodman (awoodman at netdef.org)
+- **Project Info**
+  - Are you writing code to implement an IETF work in progress?  Maybe your code is open source, routing related and targets FRRouting?
+    - We can help with both community (e.g. PR & review interactions) as well as code & finding your way around existing facilities.
+    - Just walk up & bring your questions, no heads-up required.
+  - We're spending our idle time on hacking on the topotato testing system for FRR (https://github.com/opensourcerouting/topotato)
+ 
+### Multipath QUIC Interop
+- **Champion(s)**
+  - Marcus Ihlar (marcus.ihlar at ericsson.com)
+  - Mirja Kuhlewind (mirja.kuehlewind at ericsson.com)
+  - Magnus Westerlund (magnus.westerlund at ericsson.com)
+- **Project Info**
+  - Interop testing of the multipath QUIC extension.
+  - Implementation draft for interop: https://github.com/quicwg/multipath/wiki/Implementation-Draft-Interop
+  - Interop results matrix: https://docs.google.com/spreadsheets/d/1nM2FSMTgTr3scwUuHsjojCJr4ztHq7BF44l9CiGJgH8/
+- **Specifications**
+	- https://datatracker.ietf.org/doc/draft-ietf-quic-multipath/  
+
+### Path Tracing VPP
+- **Champion(s)**
+  - Severin Dellsperger (severin.dellsperger at ost.ch)
+  - Julian Klaiber (julian.klaiber at ost.ch)
+  - Laurent Metzger (laurent.metzger at ost.ch)
+- **Draft(s)**
+  - https://datatracker.ietf.org/doc/draft-filsfils-spring-path-tracing/
+- **Project Info**
+  - The goal of this hackathon project is to enhance the open-source [VPP](https://wiki.fd.io/view/VPP) Path Tracing implementation and documentation. Currently, only the sink and mid-point processing have been implemented. During the IETF hackathon 117, we will implement the source behavior and improve the documentation and API for easier configuration and operation of Path Tracing VPP.
+
+### SCHC Interoperability and ICMP compression
+- **Champion(s)**
+  - Laurent Toutain (Laurent.Toutain@imt-atlantique.fr)
+- **Draft**
+  - draft-barthel-schc-oam-schc-00
+- **Project Info**
+  - SCHC is a compression and fragmentation framework mainly defined for constrained networks. During the previous hackathons, an open source implementation in python called openSCHC has been developed. We expect to run some interoperability tests with libschc, another implementation writen in C and targeting embedded systems. We also want to test ICMP compression.
+
+### t_cose 2.0 alpha release
+- **Champion(s)**
+  - Laurence Lundblade <lgl@island-resort.com>
+- **Project Info**
+  - Get t_cose 2.0a1 out the door. Main work is getting RFC 9053 ECDH encryption to alpha-release quality. Multiple signers and COSE_Mac are alpha quality now, so it's just ECDH.  https://github.com/laurencelundblade/t_cose 
+
+### L4S & AccECN interoperability
+- **Champion(s)**
+  - Greg White (g.white at cablelabs.com)
+- **Project Info**
+  - Continue the great work done at the IETF-114 and IETF-115 Hackathons to test and hack implementations of L4S and AccurateECN.  Endpoint implementations, network implementations, and related tools are welcome!
+- **Specifications**
+  - https://datatracker.ietf.org/doc/rfc9331/
+  - https://datatracker.ietf.org/doc/rfc9332/
+  - https://datatracker.ietf.org/doc/draft-ietf-tcpm-accurate-ecn/
+### SAV Open Playground
+ - **Champion(s)**
+ 	- Yuqian Shi (shiyuqian at zgclab.edu.cn)
+  	- Hongbing Yang (yanghb at zgclab.edu.cn)
+  	- Libin Liu (liulb at zgclab.edu.cn)
+    - Lancheng Qin (qlc19 at mails.tsinghua.edu.cn)
+    - Fang Gao (gaofang at zgclab.edu.cn)
+    - Nan Geng (gengnan at huawei.com)
+    - Li Chen (lichen at zgclab.edu.cn)
+  - **Project Info**
+  SAV Open Playground(SAVOP) provides an open platform to evaluate different SAV mechanisms. 
+  	- GitRepo: https://github.com/SAV-Open-Playground/
+    - Hackathon task: enabling flexible deployment of SAV rules based on the SIB and SAV mechanisms
+ 			- Simulation of SAV mechanisms based on SAVOP
+			- Evaluation of existing SAV mechanisms with SAVOP
+					- Case 1: Limited propagation of prefixes, e.g., NO_EXPORT
+          - Case 2: Hidden prefixes, e.g., DSR
+          - Case 3: Attacks by source address spoofing within a customer cone (CC)
+          - Case 4: Attacks by source address spoofing from a provider/peer AS
+
+    
+### BMWG - YANG model for management of Network Tester
+- **Champion(s)**
+  - Vladimir Vassilev (vladimir@lightside-instruments.com)
+- **Project(s)**
+  - Model implementation with software and programmable logic for 1Gb Ethernet
+  - RFC2544 benchmark test in python
+  - RFC2889 benchmark test in python
+- **Specifications**
+  - [draft-ietf-bmwg-network-tester-cfg](https://tools.ietf.org/html/draft-ietf-bmwg-network-tester-cfg)
+- **Repositories**
+  - Scripting - [YANG/NETCONF benchmark orchestration code](https://github.com/vlvassilev/litenc/tree/master/tntapi/example/ietf-network-interconnect-tester)
+  - Software - [YANG/NETCONF device side code](https://sourceforge.net/p/yuma123/git/ci/master/tree/example-modules/ietf-traffic-generator)
+  - FPGA -[HDL](https://github.com/vlvassilev/network-interconnect-tester-cores/tree/master/lib/hw/lsi/cores/traffic_generator_gmii)
+  - Hardware - [board design](https://github.com/vlvassilev/spark)
+  - Getting started - [walk-through](https://www.hackster.io/lightside-instruments/network-programmability-kit-for-ultra96-07435c)  
+
+### Ultra-Low Latency Cryptography
+- **Champion(s)**
+  - Yumi Sakemi (yumi.sakemi@gmo-cybersecurity.com)
+  - Satoru Kanno (satoru.kanno@gmo-cybersecurity.com)
+- **Project Info**
+  - In future communication technologies such as 6G, there are technical requirements that demand ultra-low latency and high levels of security. So, the purpose of this project is to achieve low-latency and highly secure cryptographic techniques targeting future communication technologies.
+  - At the IETF117 Hackathon, we will take on the challenge of extending OpenSSL with the low-latency cryptographic technique “Areion”.
+  - Paper at https://tches.iacr.org/index.php/TCHES/article/view/10279/9727
+  - We are currently recruiting collaborators who will join us in this project.
+- **Specifications**
+	- TBD
+
+ ### Handling Encrypted DNS Server Redirection
+- **Champion(s)**
+  - Allison Mankin (allison@pch.net)
+  - John Todd (jtodd@quad9.net)
+  - Willem Toorop 
+- **Project Info**
+  - Group initially including Allison, John, Willem Toorop (NLNet Labs), and Baula Xu (Salesforce) will prototype https://datatracker.ietf.org/doc/draft-jt-add-dns-server-redirection/ - all welcome!
+  
+
 ### Your Project Name
-- **Champion(s)**
-  - Your Name (email at domain.com)
-- **Project Info**
-  - Your project description here
-  
-  
- ### Your Project Name
-- **Champion(s)**
-  - Your Name (email at domain.com)
-- **Project Info**
-  - Your project description here
-  
-  
- ### Your Project Name
 - **Champion(s)**
   - Your Name (email at domain.com)
 - **Project Info**

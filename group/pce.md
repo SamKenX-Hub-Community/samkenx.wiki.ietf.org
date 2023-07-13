@@ -2,7 +2,7 @@
 title: PCE WG - Path Computation Element
 description: Welcome to the PCE WG Wiki
 published: true
-date: 2023-05-24T20:33:25.386Z
+date: 2023-07-11T09:03:19.844Z
 tags: wg
 editor: markdown
 dateCreated: 2022-07-23T18:39:51.941Z
@@ -24,7 +24,8 @@ Once the chairs have concluded, the document would move to the actual WG adoptio
 
 | Draft | Remarks |
 |---|---|
-| [draft-zhang-pce-resource-sharing](https://datatracker.ietf.org/doc/draft-zhang-pce-resource-sharing/) | Authors request for the 2nd adoption call during 106, support in the room; Expired, a new update is needed | 
+|draft-dong-pce-pcep-nrp|This is the new merged I-D, authors ask for adoption in 116|
+draft-zhang-pce-resource-sharing | Authors request for the 2nd adoption call during 106, support in the room; Expired, a new update is needed | 
 
 ## WG Adoption Call Queue
 
@@ -32,14 +33,17 @@ This is a queue of Individual I-D for which the WG adoption call is to be issued
 
 | Draft | State | Remarks | Responsible Chair |
 | --- | --- | --- | --- |
-| [draft-dhodylee-pce-pcep-ls](https://datatracker.ietf.org/doc/draft-dhodylee-pce-pcep-ls) | Pending | - | - |
-| [draft-dhody-pce-stateful-pce-vendor](https://datatracker.ietf.org/doc/draft-dhody-pce-stateful-pce-vendor) | Pending | - | - |
-| [draft-li-pce-controlled-id-space](https://datatracker.ietf.org/doc/draft-li-pce-controlled-id-space) | Pending | - | - |
-| [draft-dhody-pce-pcep-extension-pce-controller-p2mp](https://datatracker.ietf.org/doc/draft-dhody-pce-pcep-extension-pce-controller-p2mp) | Pending | - | - |
-| [draft-koldychev-pce-operational](https://datatracker.ietf.org/doc/draft-koldychev-pce-operational/) | Pending | Chairs have asked to break the document into informational and standards tracks | - |  
-| draft-peng-pce-entropy-label-position | Pending | Expired, a new update is needed | - |
-| draft-chen-pce-sr-mpls-sid-verification | Penidng | Coordinate with SRv6 draft for IANA allication | - |
-| [draft-chen-pce-bier](https://datatracker.ietf.org/doc/draft-chen-pce-bier/) | Pending | Confimed with BIER WG | - |
+| [draft-dhody-pce-stateful-pce-vendor](https://datatracker.ietf.org/doc/draft-dhody-pce-stateful-pce-vendor) | Poll in progress | IPR - 3/5 | Julien |
+| [draft-chen-pce-bier](https://datatracker.ietf.org/doc/draft-chen-pce-bier/) | Pending | Confimed with BIER WG | Dhruv |
+| [draft-dhodylee-pce-pcep-ls](https://datatracker.ietf.org/doc/draft-dhodylee-pce-pcep-ls) | Pending | - | Julien |
+| [draft-li-pce-controlled-id-space](https://datatracker.ietf.org/doc/draft-li-pce-controlled-id-space) | Pending | - | Dhruv |
+| [draft-dhody-pce-pcep-extension-pce-controller-p2mp](https://datatracker.ietf.org/doc/draft-dhody-pce-pcep-extension-pce-controller-p2mp) | Pending | - | Julien |
+|draft-sidor-pce-circuit-style-pcep-extensions|Pending|-|-| 
+| [draft-koldychev-pce-operational](https://datatracker.ietf.org/doc/draft-koldychev-pce-operational/) | Expired | Chairs have asked to break the document into informational and standards tracks ; pending on authors | - |  
+| draft-peng-pce-entropy-label-position | Pending | - | - |
+| draft-chen-pce-sr-mpls-sid-verification | Penidng | Coordinate with SRv6 draft for IANA allocation | - |
+| draft-chen-pce-sr-ingress-protection | Expired | - | - |
+
 
 ## Recently Adopted Documents
 
@@ -74,7 +78,10 @@ Once the chairs have concluded the document would move to the actual WG LC queue
 
 |Draft|Imp Sec|Remarks|Action|
 | --- | --- | --- | ---|
-| - | - | - | -|
+| [draft-ietf-pce-segment-routing-policy-cp](https://datatracker.ietf.org/doc/draft-ietf-pce-segment-routing-policy-cp) | Y | Authors requested WGLC at 116 | Early code point allocated |
+| [draft-ietf-pce-stateful-pce-optional](https://datatracker.ietf.org/doc/draft-ietf-pce-stateful-pce-optional) | Y | - | - |
+| [draft-ietf-pce-state-sync](https://datatracker.ietf.org/doc/draft-ietf-pce-state-sync) | Y | - | - |
+
 
 ## WG Last Call Queue 
 
@@ -92,8 +99,8 @@ This is a queue of documents after WG LC and before being sent to the IESG.
 
 | Draft| State| Remarks| Shepherd|
 | --- | --- | --- | --- |
-| [draft-ietf-pce-pcep-yang](https://datatracker.ietf.org/doc/draft-ietf-pce-pcep-yang/) | Waiting for write-up | IPR -4/4 | Julien |
-| [draft-ietf-pce-segment-routing-ipv6](https://datatracker.ietf.org/doc/draft-ietf-pce-segment-routing-ipv6) | Waiting for authors to handle LC comments |  IPR Poll - 6/6 | Julien|
+| [draft-ietf-pce-pcep-yang](https://datatracker.ietf.org/doc/draft-ietf-pce-pcep-yang/) | Waiting for write-up and Shepherd review | IPR -4/4 | Julien |
+| [draft-ietf-pce-segment-routing-ipv6](https://datatracker.ietf.org/doc/draft-ietf-pce-segment-routing-ipv6) | Waiting for authors to handle LC comments |  IPR Poll - 6/6 | Hari |
 
 ## Drafts with the IESG
 
@@ -127,6 +134,7 @@ This is a queue of PCE WG I-Ds that have a requirement for early codepoint alloc
 
 |Draft|State|Remarks|
 | --- | --- | --- |
+| draft-ietf-pce-pcep-extension-native-ip | WG I-D | Authors requested early allocation during WG-LC |
 | draft-ietf-pce-sr-path-segment-06 | WG I-D | Authors requested early allocation on 2022-08-19; dependent on PCEP-SRv6 / PCECC-SR  |
 
 ### Early IANA Allocations
